@@ -1,0 +1,270 @@
+
+
+body{
+	padding: 30 px;
+
+	background-image: url(Presentation1.png);
+	font-size: 22 px;
+	font-weight: bold;
+
+}	
+.Box{
+
+	    margin:0;
+		padding:0 ;
+		position: absolute;
+		
+		top: 50%;
+		
+		transform: translate(-50%,-50%);
+		 
+		left: 75%;
+}
+
+ 
+.My_Form{
+
+	padding:20px ;
+	margin: 10%;
+	background: white;
+
+	justify-content: center;
+		align-items: center;
+		height: 720px;
+		width: 550px;
+		text-align: center; 
+		transition: 0.5s;
+
+	
+}
+
+.My_Form .form-group{
+
+	padding-bottom:20px ;
+	padding: 10px 0;
+
+		border-left: 0;
+		border-right: 0;
+		border-top: 0;
+		border-bottom: 1px solid #999;
+		outline: none;
+		background: transparent;
+		align-content: center;
+
+	
+}
+
+.My_Form span {
+
+	font-size: 20px ;
+	font-weight: 500;
+	font-family: sans-serif;
+	
+	letter-spacing: 2px;
+	text-align: center;
+	width: 100%;
+	margin-bottom: 10px;
+	color: black ;
+	
+}
+
+.My_Form .Terms{
+
+	font-size: 16px;
+	padding: 15px;
+	margin: 10px;
+	
+}
+
+.My_Form .Terms a{
+
+
+
+}
+.My_Form .Terms .text1{
+	align-content: center;
+	font-size: 15px;
+	padding: 20 px;
+
+
+
+
+}
+.My_Form .Terms .text2{
+	padding: 20 px 10 px;
+	font-size: 15px;
+
+
+}
+
+.My_Form label{
+	
+	
+	padding: 10px 0;
+	font-size:16 ;
+	pointer-events: none;
+	transition: 0.5s ease-out;
+
+
+
+}
+.input-group input{
+	width: 100%;
+	padding: 20px;
+	font-size: ;
+	letter-spacing: 1px;
+	
+	border: none;
+	border-bottom: 1px solid #fff;
+	outline: none;
+	background-color: transparent;
+	color: inherit;
+}
+.My_Form label{
+
+		;
+		position: absolute;
+	top: 0;
+	left: 0;
+	padding: 10px 0;
+	font-size: 1 rem;
+	pointer-events: none;
+	transition: 0.5s ease-out;
+
+}
+
+.My_Form input[type="text"]{
+
+	position: relative;
+	
+	height: 20%;
+	width: 95%;
+	color: darkcyan;
+	letter-spacing: 1px;
+	border: none;
+	outline: none;
+	box-shadow: none;
+	padding: 8px 6px;
+}
+
+.My_Form input[Placeholder]{
+
+		font-size: 20px;
+
+}
+
+
+
+
+.My_Form input[type="Submit"]{
+		margin-top: 10px;
+		font-size: 24px;
+		background-color:  #0DB6BA;
+		color: black;
+		padding: 10px 12px;
+		cursor: pointer;
+		letter-spacing: 1px;
+		font-weight: 300;
+		transition: 0.5s;
+
+
+		border: none;
+		outline: none;
+		box-shadow: none;
+
+
+}
+
+.My_Form input[type="Submit"]:hover{
+	background: lightcyan;
+	color: darkcyan;
+}
+
+.My_Form2{
+
+	padding:20px ;
+	background: lightcyan;
+	
+}
+.My_Form .form-group2{
+
+	padding-bottom:20px ;
+	
+}
+.My_Form2 label{
+
+	display: block;
+
+
+}
+
+.My_Form2 input[type="text"]{
+
+	position: relative;
+	padding: 24 px;
+	height: 70%;
+	width: 95%;
+	color: darkcyan;
+	background-color: ghostwhite;
+	letter-spacing: 1px;
+	 
+		border: none;
+		outline: none;
+		box-shadow: none;
+
+	padding: 12px 6px;
+	box-shadow: none;
+}
+
+.My_Form2 span {
+
+	font-size: 20px ;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	text-align: center;
+	width: 100%;
+	margin-bottom: 10px;
+	color: grey ;
+	
+}
+.My_Form2 input[type="Submit"]{
+
+		font-size: 24px;
+		background-color: paleturquoise;
+		color: whitesmoke;
+		padding: 10px 12px;
+		cursor: pointer;
+		letter-spacing: 1px;
+		font-weight: 300;
+		transition: 0.2s;
+
+
+		border: none;
+		outline: none;
+		box-shadow: none;
+
+
+}
+.My_Form2 input[type="Submit"]:hover{
+	background: lightgray;
+	color: darkcyan;
+}
+.My_Form2 .Terms2 .text3{
+	align-content: center;
+	font-size: 15px;
+	padding: 20 px 25 px;
+	align-content: center;
+
+
+}
+.My_Form2 input[Placeholder]{
+
+		font-size: 20px;
+
+}
+.My_Form2 label{
+
+		color: transparent;
+
+}

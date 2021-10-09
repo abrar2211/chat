@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <title>Chat App</title>
+  <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+  <script defer src="script.js"></script>
+  <style>
+  @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+    body {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      background: paleturquoise;
+      font-family: "Roboto", sans-serif;
+    }
+    header{
+  position: fixed;
+  background: #0DB6BA;
+  width: 100%;
+    padding: 20px;
+    width: 100%;
+    height: 70px;
+
+}
+.left_area h3{
+  color: #ffffff;
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 22px;
+  font-weight: 900;
+}
+.logout_btn{
+  font: "Roboto" sans-serif;
+  padding: 5px;
+  background: white;
+  text-decoration: none;
+  float: right;
+  margin-right: 40px;
+  margin-top: -20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #0DB6BA;
+  transition: 0.5s;
+  transition-property: background;
+}
+
+.logout_btn:hover{
+  background: #0DB6BA;
+  color: white ;
+  border: 1px solid whitesmoke;
+}
+
+input[type=Search] {
+  width: 120px;
+  box-sizing: border-box;
+  border: 2px solid #0DB6BA;
+  border-radius: 4px;
+  font-size: 12px;
+  background-color: white;
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  margin-top: -100px;
+  
+  margin-left: 250px;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=Search]:focus {
+   width: 15%;
+}
+ button[type=Search]{
+   align-content: center;
+  color: white;
+  font-weight: 400;
+  width: 80px;
+  height: 40px;
+  box-sizing: border-box;
+  border: 2px solid ghostwhite;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #0DB6BA  ;
+  background-position: 10px 10px; 
+  cursor: pointer;
+  transition: 0.3s;
+  }
+
+ button[type=Search]:hover{
+   align-content: center;
+  color: #0DB6BA;
+  font-weight: 400;
+  width: 80px;
+  height: 40px;
+  box-sizing: border-box;
+  border: 2px solid  #0DB6BA;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white  ;
+  background-position: 10px 10px; 
+  cursor: pointer;
+
+  }
+.sidebar{
+  background: #0DB6BA;
+  margin-top: 70px;
+  padding-top: 30px;
+  position: fixed;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  transition: o.5s;
+  transition-property: left;
+}
+.sidebar a{
+  color: #ffff;
+  display: block;
+  width: 100%;
+  line-height: 60px;
+  text-decoration: none;
+  padding-left: 40px;
+  box-sizing: border-box;
+  transition: 0.5s;
+  transition-property: background;
+}
+.sidebar a:hover{
+  background: white;
+  color:#0DB6BA ;
+}
+.sidebar i{
+  padding-right: 10px;
+
+}
+label #sidebar_btn{
+  z-index: 1;
+  color:white;
+  position: fixed;
+  cursor: pointer;
+  left: 200px;
+  font-size: 20px;
+  margin: 5px 0;
+  transition: 0.5s;
+  transition-property: color; 
+}
+label #sidebar_btn:hover{
+  color: lightgrey;
+}
+#check:checked ~ .sidebar{
+  left: -190px;
+}
+#check:checked ~ .sidebar a span{
+  display: none;
+}
+#check:checked ~ .sidebar a{
+  font-size: 20px;
+  margin-left: 170px;
+  width: 80px;
+}
+#check{
+  display: none;
+}
+
+    #message-container {
+      width: 70%;
+      max-width: 1200px;
+      padding-top: 140px;
+      padding-left: 100px;
+    }
+
+    #message-container div {
+      background-color: white;
+      padding: 5px;
+      
+    }
+
+    #message-container div:nth-child(2n) {
+      background-color: paleturquoise;
+    }
+
+    #send-container {
+      position: fixed;
+      padding-bottom: 0px;
+      bottom: 0;
+      border: 1px solid whitesmoke;
+      background-color: white;
+      max-width: 1200px;
+      width: 60%;
+      height: 5%;
+      display: flex;
+      margin-bottom: 30px;
+    }
+
+    #send-button {
+      padding: 3px;
+      background: #0DB6BA;
+      border: 1.5px solid whitesmoke;
+      color: whitesmoke;
+      transition: 0.3s;
+    }
+
+    #send-button:hover {
+      padding: 3px;
+      background: white;
+      border: 1.5px solid #0DB6BA;
+      color: #0DB6BA;
+    }
+
+    #message-input {
+      flex-grow: 1;
+      border: 1px solid white;
+    }
+  </style>
+
+</head>
+<body>
+  
+  
+    
+  
+    <!-- Add Firebase products that you want to use -->
+  <input type="checkbox" id="check">
+	<!--header area start-->
+	<header>
+		<label for="check">
+			<i class="fas fa-bars" id="sidebar_btn"></i>
+		</label>
+		<div class="left_area">
+			<h3>&nbsp Linker!</h3>
+		</div>
+		<div class="right_area">
+			<a href="#" class="logout_btn">Logout</a>
+		</div>
+	</header>
+	<div class="sidebar">
+		<a href="../Myprofile/myprofile.html"><i class="far fa-user-circle"></i><span>My Profile</span></a>
+		<a href="../timeline/Newsfeed.html"><i class="fas fa-newspaper"></i><span>Newsfeed</span></a>
+		<a href="../Friends/newsfeed.html"><i class="fas fa-users"></i><span>Friends</span></a>
+    <a href="#"><i class="far fa-comment-alt"></i><span>Messages</span></a>
+		<a href="../Settings/Settings.html"><i class="fas fa-cog"></i><span>Settings</span></a>
+	</div>
+
+  <div id="message-container"></div>
+  <form id="send-container">
+    <input type="text" id="message-input">
+    <button type="submit" id="send-button">Send</button>
+  </form>
+</body>
+
+
+
+</html>

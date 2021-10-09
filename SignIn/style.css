@@ -1,0 +1,143 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	font-family: sans-serif;
+	
+}
+.background{
+	height: 100%;
+	width:100%;
+	background-image: url(pp4.png);
+	background-position: center;
+	background-size: cover;
+	position: absolute;
+}
+
+
+.form-box{
+	width: 500px;
+	height: 650px;
+	position: relative;
+	margin: 4% ;
+	padding: 10px;
+	background: #fff;
+	transition: 0.5s;
+	
+}
+.button-box{
+
+	width: 220px;
+	margin: 35px auto;
+	position: relative;
+	box-shadow: 0 0 20px 9px lightcyan;
+	border-radius: 20px;
+	transition: 0.5s;
+	
+	 }
+
+ .toggle-btn{
+
+	padding: 10px 30px;
+	cursor: pointer;
+	background: transparent;
+	border: 0px;
+	outline: none;
+	position: relative ;
+	color:white ;
+	background-color: #0DB6BA;
+	border-radius: 20px;
+	transition: 0.4s;
+}
+ #btn:hover{
+	background-color: lightcyan;
+	color: paleturquoise;
+}
+
+.input-group{
+	top: 10%;
+	left: 0;
+	line-height: 1;
+	align-content: center;
+	align-items: center;
+	
+	position: relative;
+	width: 280px;
+	transition: 0.5s;
+}
+.input-field label{
+	position: absolute;;
+	padding: 5px 0;
+	border-bottom: 10px;
+	
+	font-size: 18px;
+	pointer-events: none;
+	transition: 0.5s ease-out;
+}
+.input-group input:focus + label{
+	transform: translateY(-20px);
+	color: darkcyan;
+	font-size: 15px ;
+	transition: 0.7s;
+
+
+	}
+.input-field{
+		width: 140%;
+		padding: 10px 0;
+		margin: 10px 0;
+		border-left: 0;
+		border-right: 0;
+		border-top: 0;
+		border-bottom: 1px solid #999;
+		outline: none;
+		background: transparent;
+		align-content: center;
+
+}
+.submit-btn{
+	width: 85%;
+	padding: 10px 80px;
+	cursor: pointer;
+	display: block;
+	margin: 20px 70px;
+	color: white;
+	
+	background: #0DB6BA;
+	border: 0;
+	outline: none;
+	border-radius: 20px;
+	font-size: 20px;
+	font-weight: 700;
+	transition: 0.4s;
+
+}
+.form-box button[type="Submit"]:hover{
+	background: lightgray;
+	color: darkcyan;
+	transition: 0.4s;
+}
+
+.form-box button toggle-btn[type="Submit"]:hover{
+	background: lightgray;
+	color: darkcyan;
+	transition: 0.4s;
+}
+
+.checkbox{
+	margin: 30px 10px 30px 0;
+
+}
+.span{
+	color: #777;
+	font-size: 12px;
+	bottom: 68px;
+	position: absolute;
+	}
+#login{
+	left: 50px;
+}
+#register{
+	left: 450px;
+}
+
